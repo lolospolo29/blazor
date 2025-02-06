@@ -11,6 +11,16 @@
     <p>Response: @responseMessage</p>
 }
 
+
+<h3>Send Data to Flask API</h3>
+<button @onclick="SendData">Send Data to Flask</button>
+
+@if (!string.IsNullOrEmpty(responseMessage))
+{
+    <p>Response: @responseMessage</p>
+}
+
+
 @code {
     private string responseMessage = "";
 
@@ -18,7 +28,27 @@
     {
         try
         {
-            responseMessage = await Http.GetStringAsync("get-data");
+            responseMessage = await Http.GetStringAsync("get-trades");
+        }
+        catch (Exception ex)
+        {
+            responseMessage = $"Error: {ex.Message}";
+        }
+    }
+
+    private async Task SendData()
+    {
+        var data = new
+        {
+            name = "John Doe",
+            message = "Hello from Blazor!"
+        };
+
+        try
+        {
+            // Send POST request to Flask API with JSON data
+            var response = await Http.PostAsJsonAsync("post-data", data);
+            responseMessage = await response.Content.ReadAsStringAsync(); // Get response message
         }
         catch (Exception ex)
         {
