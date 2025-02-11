@@ -1,6 +1,7 @@
-public abstract class TimeWindow
+public  class TimeWindow
 {
-    public abstract bool IsInEntryWindow(DateTime time);
-    public abstract bool IsInExitWindow(DateTime time);
-    public abstract string ToJson();
+    public  bool IsInEntryWindow(DateTime time){return true;}
+    
+    public bool IsInExitWindow(DateTime time) { return true; }
+    public string ToJson() { return ""; }
 }

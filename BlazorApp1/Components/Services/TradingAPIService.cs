@@ -11,13 +11,30 @@ public class TradingAPIService
     {
         _httpClient = httpClient;
     }
-    //             WeatherForecast? weatherForecast = 
-   //            JsonSerializer.Deserialize<WeatherForecast>(jsonString);
-    public async Task<string> GetFlaskDataAsync()
+
+    public async Task<List<Trade>> GetTrades()
     {
         var message = await _httpClient.GetStringAsync("get-trades");
         List<Trade>? trades = JsonSerializer.Deserialize<List<Trade>>(message);
-        return message;
+#pragma warning disable CS8603 // Possible null reference return.
+        return trades;
+#pragma warning restore CS8603 // Possible null reference return.
+    }
+    public async Task<List<Asset>> GetAssets()
+    {
+        var message = await _httpClient.GetStringAsync("get-assets");
+        List<Asset>? assets = JsonSerializer.Deserialize<List<Asset>>(message);
+#pragma warning disable CS8603 // Possible null reference return.
+        return assets;
+#pragma warning restore CS8603 // Possible null reference return.
+    }
+    public async Task<List<Strategy>> GetStrategies()
+    {
+        var message = await _httpClient.GetStringAsync("get-assets");
+        List<Strategy>? strategies = JsonSerializer.Deserialize<List<Strategy>>(message);
+#pragma warning disable CS8603 // Possible null reference return.
+        return strategies;
+#pragma warning restore CS8603 // Possible null reference return.
     }
     public async Task SendData()
     {

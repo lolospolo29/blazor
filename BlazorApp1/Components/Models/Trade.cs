@@ -9,15 +9,10 @@ public class Trade
     public string? Id { get; set; }
 
     [JsonPropertyName("orders")]
-    public List<string>? Orders { get; set; }
+    public List<Order>? Orders { get; set; }
 
-    [JsonPropertyName("asset")]
-    public string? Asset { get; set; }
-
-    [JsonPropertyName("broker")]
-    public string? Broker { get; set; }
-
-    [JsonPropertyName("strategy")]
+    [JsonPropertyName("relation")]
+    public Relation? Relation{ get; set; }
     public string? Strategy { get; set; }
 
     [JsonPropertyName("category")]
@@ -26,20 +21,17 @@ public class Trade
     [JsonPropertyName("side")]
     public string? Side { get; set; }
 
-    [JsonPropertyName("tpslMode")]
-    public  string? TpslMode { get; set; }
-
     [JsonPropertyName("unrealisedPnl")]
-    public double? UnrealisedPnl { get; set; }
+    public string? UnrealisedPnl { get; set; }
 
     [JsonPropertyName("leverage")]
-    public int? Leverage { get; set; }
+    public string? Leverage { get; set; }
 
     [JsonPropertyName("size")]
-    public int? Size { get; set; }
+    public string? Size { get; set; }
 
     [JsonPropertyName("tradeMode")]
-    public string?TradeMode { get; set; }
+    public int?TradeMode { get; set; }
 
     [JsonPropertyName("updatedTime")]
     public string? UpdatedTime { get; set; }
@@ -47,18 +39,16 @@ public class Trade
     [JsonPropertyName("createdTime")]
     public string? CreatedTime { get; set; }
 
-
-
     public void AddOrder(Order order)
     {
-        Orders ??= new List<string>();
-        Orders.Add(order.OrderLinkId);
+        Orders ??= new List<Order>();
+        Orders.Add(order);
     }
 
     public void AddOrders(List<Order> orders)
     {
-        Orders ??= new List<string>();
-        Orders.AddRange(orders.ConvertAll(o => o.OrderLinkId));
+        Orders ??= new List<Order>();
+        Orders.AddRange(orders);
     }
 
     public string ToJson()
@@ -74,12 +64,4 @@ public class Trade
             return string.Empty;
         }
     }
-}
-
-#pragma warning disable CA1050 // Declare types in namespaces
-public class TradeWrapper
-#pragma warning restore CA1050 // Declare types in namespaces
-{
-    [JsonPropertyName("Trade")]
-    public Trade? Trade { get; set; }
 }

@@ -2,7 +2,22 @@
 @rendermode InteractiveServer
 
 <h3>Flask API Data</h3>
-<button @onclick="FetchData">Get Data from Flask</button>
+<button @onclick="FetchTrades">Fetcn Trades</button>
+
+@if (!string.IsNullOrEmpty(ResponseMessage))
+{
+    <p>Response: @ResponseMessage</p>
+}
+<h1></h1>
+<button @onclick="SendData">Send Test POST</button>
+
+@if (!string.IsNullOrEmpty(PostResponseMessage))
+{
+    <p>Response: @PostResponseMessage</p>
+}
+ <h1></h1>
+
+<button @onclick="FetchAssets">Fetcn Assets</button>
 
 @if (!string.IsNullOrEmpty(ResponseMessage))
 {
