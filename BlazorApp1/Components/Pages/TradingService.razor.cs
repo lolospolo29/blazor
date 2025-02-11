@@ -1,5 +1,8 @@
 using Microsoft.AspNetCore.Components;
-    public partial class TradingService 
+
+namespace BlazorApp1.Components.Pages
+{
+    public partial class TradingService : ComponentBase
     {
         [Inject] private TradingAPIService ApiService { get; set; } = default!;
 
@@ -17,3 +20,4 @@ using Microsoft.AspNetCore.Components;
             }
         }
     }
+}

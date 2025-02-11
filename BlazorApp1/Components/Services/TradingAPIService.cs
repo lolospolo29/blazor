@@ -1,17 +1,23 @@
-public class TradingAPIService
-{
-    private ILogger _logger;
+using System.Text.Json;
+using static System.Text.Json.JsonSerializer;
 
+
+public class TradingAPIService
+
+{
     private readonly HttpClient _httpClient;
 
-    public TradingAPIService(ILogger logger,HttpClient httpClient)
+    public TradingAPIService(HttpClient httpClient)
     {
-        _logger = logger;
         _httpClient = httpClient;
     }
+    //             WeatherForecast? weatherForecast = 
+   //            JsonSerializer.Deserialize<WeatherForecast>(jsonString);
     public async Task<string> GetFlaskDataAsync()
     {
-        return await _httpClient.GetStringAsync("get-data");
+        var message = await _httpClient.GetStringAsync("get-trades");
+        List<Trade>? trades = JsonSerializer.Deserialize<List<Trade>>(message);
+        return message;
     }
     public async Task SendData()
     {

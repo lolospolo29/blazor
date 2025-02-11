@@ -7,16 +7,10 @@ var builder = WebApplication.CreateBuilder(args);
 // Add services to the container.
 builder.Services.AddRazorComponents()
     .AddInteractiveServerComponents();
-builder.Services.AddScoped<TradingAPIService>();
-
 
 builder.Services.AddScoped<HttpClient>(sp =>
 new HttpClient { BaseAddress = new Uri("http://localhost:5000/") });
-
-builder.Logging.SetMinimumLevel(LogLevel.Information); // Set the desired log level
-builder.Logging.AddConsole();  // Optionally add console logging
-
-
+builder.Services.AddScoped<TradingAPIService>();
 
 var app = builder.Build();
 
