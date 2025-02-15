@@ -27,6 +27,10 @@ build_property.EnableCodeStyleSeverity =
 build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50cy9BcHAucmF6b3I=
 build_metadata.AdditionalFiles.CssScope = 
 
+[/Users/lauris/Desktop/blazor/BlazorApp1/Components/Pages/ConfigureAssets.razor]
+build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50cy9QYWdlcy9Db25maWd1cmVBc3NldHMucmF6b3I=
+build_metadata.AdditionalFiles.CssScope = 
+
 [/Users/lauris/Desktop/blazor/BlazorApp1/Components/Pages/ConfigureSMT.razor]
 build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50cy9QYWdlcy9Db25maWd1cmVTTVQucmF6b3I=
 build_metadata.AdditionalFiles.CssScope = 

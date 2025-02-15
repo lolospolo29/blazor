@@ -19,18 +19,21 @@ public class TradingAPIService
         List<Trade>? trades = JsonSerializer.Deserialize<List<Trade>>(message);
         return trades ?? [];
     }
-    public async Task<List<Asset>> GetAssets()
-    {
-        var message = await _httpClient.GetStringAsync("get-assets");
-        List<Asset>? assets = JsonSerializer.Deserialize<List<Asset>>(message);
-        return assets ?? [];
-    }
+
     public async Task<List<Strategy>> GetStrategies()
     {
         var message = await _httpClient.GetStringAsync("get-strategies");
         List<Strategy>? strategies = JsonSerializer.Deserialize<List<Strategy>>(message);
         return strategies ?? [];
     }
+
+    public async Task<List<Asset>> GetAssets()
+    {
+        var message = await _httpClient.GetStringAsync("get-assets");
+        List<Asset>? assets = JsonSerializer.Deserialize<List<Asset>>(message);
+        return assets ?? [];
+    }
+
     public async Task CreateAsset(Asset asset)
     {
         var data = asset.ToJson();
@@ -61,5 +64,19 @@ public class TradingAPIService
             var responseMessage = $"Error: {ex.Message}";
         }
     }
-
+    public async Task DeleteAsset(Asset asset)
+    {
+        var data = asset.ToJson();
+        try
+        {
+            // Send POST request to Flask API with JSON data
+            var jsonString = JsonSerializer.Serialize(asset);
+            var content = new StringContent(jsonString, Encoding.UTF8, "application/json");
+            await _httpClient.PostAsync("delete-asset", content);
+        }
+        catch (Exception ex)
+        {
+            var responseMessage = $"Error: {ex.Message}";
+        }
+    }
 }

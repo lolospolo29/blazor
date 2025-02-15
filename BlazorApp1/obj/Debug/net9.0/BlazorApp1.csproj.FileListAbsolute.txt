@@ -81,5 +81,5 @@
 /Users/lauris/Desktop/blazor/BlazorApp1/obj/Debug/net9.0/compressed/tzxjg6is5z-32p77bvc6j.gz
 /Users/lauris/Desktop/blazor/BlazorApp1/obj/Debug/net9.0/compressed/0wz98yz2xy-r91md4kz0z.gz
 /Users/lauris/Desktop/blazor/BlazorApp1/obj/Debug/net9.0/BlazorApp1.csproj.Up2Date
-/Users/lauris/Desktop/blazor/BlazorApp1/obj/Debug/net9.0/compressed/ysu4imbah3-s3ym6pzz52.gz
-/Users/lauris/Desktop/blazor/BlazorApp1/obj/Debug/net9.0/compressed/uxxncn5hnr-s3ym6pzz52.gz
+/Users/lauris/Desktop/blazor/BlazorApp1/obj/Debug/net9.0/compressed/ysu4imbah3-r1khet8kix.gz
+/Users/lauris/Desktop/blazor/BlazorApp1/obj/Debug/net9.0/compressed/uxxncn5hnr-r1khet8kix.gz
