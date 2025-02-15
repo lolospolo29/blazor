@@ -1,0 +1,25 @@
+@page "/create-asset"
+@rendermode InteractiveServer
+
+<h3>Create Asset</h3>
+
+
+<form @onsubmit="SubmitAsync">
+    <div>
+        <label>
+            Name: 
+            <InputText @bind-Value="model!.Name" />
+        </label>
+    </div>
+    <div>
+        <InputSelect @bind-Value="model.AssetClass">
+            @foreach (var assetclass in Enum.GetValues(typeof(AssetClass)))
+            {
+                <option value="@assetclass">@assetclass</option>
+            }
+        </InputSelect>
+    </div>
+    <div>
+        <button type="submit">Submit</button>
+    </div>
+</form>

@@ -1,10 +1,7 @@
 using System.Text.Json;
 using System.Text.Json.Serialization;
 
-#pragma warning disable CA1050 // Declare types in namespaces
 public class Asset
-#pragma warning restore CA1050 // Declare types in namespaces
-#pragma warning restore CA1050 // Declare types in namespaces
 {
     [JsonPropertyName("name")]
     public string? Name { get; set; } 

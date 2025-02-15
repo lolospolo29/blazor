@@ -1,0 +1,40 @@
+@page "/configure-smt"
+@rendermode InteractiveServer
+
+<form @onsubmit="AddSMTAsync">
+    <div>
+        <InputSelect @bind-Value="currentPair">
+            @foreach (var pair in smtPairs)
+            {
+                <option value="@pair">@pair.Strategy</option>
+            }
+        </InputSelect>
+    </div>
+    <div>
+        <InputSelect @bind-Value="currentPair.AssetB">
+            @foreach (var asset in assets)
+            {
+                <option value="@asset.Name">@asset.Name</option>
+            }
+        </InputSelect>
+    </div>
+    <div>
+        <InputSelect @bind-Value="currentPair.Correlation">
+            @foreach (var correlation in Enum.GetValues(typeof(Correlation)))
+            {
+                <option value="@correlation">@correlation</option>
+            }
+        </InputSelect>
+    </div>
+    <div>
+        <InputSelect @bind-Value="currentPair.Strategy">
+            @foreach (var strategy in strategies)
+            {
+                <option value="@strategy.Name">@strategy.Name</option>
+            }
+        </InputSelect>
+    </div>
+    <div>
+        <button type="submit">Add SMT</button>
+    </div>
+</form>

@@ -2,11 +2,14 @@ using BlazorApp1.Components;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.Logging;
 
+
 var builder = WebApplication.CreateBuilder(args);
+
 
 // Add services to the container.
 builder.Services.AddRazorComponents()
     .AddInteractiveServerComponents();
+
 
 builder.Services.AddScoped<HttpClient>(sp =>
 new HttpClient { BaseAddress = new Uri("http://localhost:5000/") });

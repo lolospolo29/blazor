@@ -1,4 +1,7 @@
 is_global = true
+build_property.MudDebugAnalyzer = 
+build_property.MudAllowedAttributePattern = 
+build_property.MudAllowedAttributeList = 
 build_property.TargetFramework = net9.0
 build_property.TargetPlatformMinVersion = 
 build_property.UsingMicrosoftNETSdkWeb = true
@@ -24,16 +27,20 @@ build_property.EnableCodeStyleSeverity =
 build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50cy9BcHAucmF6b3I=
 build_metadata.AdditionalFiles.CssScope = 
 
+[/Users/lauris/Desktop/blazor/BlazorApp1/Components/Pages/ConfigureSMT.razor]
+build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50cy9QYWdlcy9Db25maWd1cmVTTVQucmF6b3I=
+build_metadata.AdditionalFiles.CssScope = 
+
+[/Users/lauris/Desktop/blazor/BlazorApp1/Components/Pages/CreateAsset.razor]
+build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50cy9QYWdlcy9DcmVhdGVBc3NldC5yYXpvcg==
+build_metadata.AdditionalFiles.CssScope = 
+
 [/Users/lauris/Desktop/blazor/BlazorApp1/Components/Pages/Error.razor]
 build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50cy9QYWdlcy9FcnJvci5yYXpvcg==
 build_metadata.AdditionalFiles.CssScope = 
 
 [/Users/lauris/Desktop/blazor/BlazorApp1/Components/Pages/Home.razor]
 build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50cy9QYWdlcy9Ib21lLnJhem9y
-build_metadata.AdditionalFiles.CssScope = 
-
-[/Users/lauris/Desktop/blazor/BlazorApp1/Components/Pages/TradingService.razor]
-build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50cy9QYWdlcy9UcmFkaW5nU2VydmljZS5yYXpvcg==
 build_metadata.AdditionalFiles.CssScope = 
 
 [/Users/lauris/Desktop/blazor/BlazorApp1/Components/Routes.razor]

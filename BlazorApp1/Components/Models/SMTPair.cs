@@ -5,17 +5,21 @@ public class SMTPair
     [JsonPropertyName("strategy")]
     public string Strategy { get; set; }
 
-    [JsonPropertyName("smt_pairs")]
-    public List<string> SmtPairs { get; set; }
+    [JsonPropertyName("asset_a")]
+    public string AssetA { get; set; }
+
+    [JsonPropertyName("asset_b")]
+    public string AssetB { get; set; }
 
     [JsonPropertyName("correlation")]
     public string Correlation { get; set; }
 
-    public SMTPair(string strategy, List<string> smtPairs, string correlation)
+    public SMTPair(string? strategy, string? correlation, string? assetA, string? assetB)
     {
-        Strategy = strategy;
-        SmtPairs = smtPairs;
-        Correlation = correlation;
+        Strategy = strategy ?? string.Empty;
+        Correlation = correlation ?? string.Empty;
+        AssetA = assetA ?? string.Empty;
+        AssetB = assetB ?? string.Empty;
     }
 
     public string ToJson()
