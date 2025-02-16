@@ -31,12 +31,20 @@ build_metadata.AdditionalFiles.CssScope =
 build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50cy9QYWdlcy9Db25maWd1cmVBc3NldHMucmF6b3I=
 build_metadata.AdditionalFiles.CssScope = 
 
+[/Users/lauris/Desktop/blazor/BlazorApp1/Components/Pages/ConfigureRelations.razor]
+build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50cy9QYWdlcy9Db25maWd1cmVSZWxhdGlvbnMucmF6b3I=
+build_metadata.AdditionalFiles.CssScope = 
+
 [/Users/lauris/Desktop/blazor/BlazorApp1/Components/Pages/ConfigureSMT.razor]
 build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50cy9QYWdlcy9Db25maWd1cmVTTVQucmF6b3I=
 build_metadata.AdditionalFiles.CssScope = 
 
 [/Users/lauris/Desktop/blazor/BlazorApp1/Components/Pages/CreateAsset.razor]
 build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50cy9QYWdlcy9DcmVhdGVBc3NldC5yYXpvcg==
+build_metadata.AdditionalFiles.CssScope = 
+
+[/Users/lauris/Desktop/blazor/BlazorApp1/Components/Pages/CreateRelation.razor]
+build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50cy9QYWdlcy9DcmVhdGVSZWxhdGlvbi5yYXpvcg==
 build_metadata.AdditionalFiles.CssScope = 
 
 [/Users/lauris/Desktop/blazor/BlazorApp1/Components/Pages/Error.razor]

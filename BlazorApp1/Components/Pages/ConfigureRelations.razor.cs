@@ -5,7 +5,7 @@ using MudBlazor;
 
 namespace BlazorApp1.Components.Pages
 {
-    public partial class ConfigureAssets : ComponentBase
+    public partial class ConfigureRelations : ComponentBase
     {
         [Inject] private TradingAPIService ApiService { get; set; } = default!;
 
@@ -13,9 +13,7 @@ namespace BlazorApp1.Components.Pages
 
         public bool IsEditing { get; set; } = false;
 
-        public List<Asset> assets = new List<Asset>();
-
-        public Asset currentAsset = new Asset();
+        public List<Relation> relations = new List<Relation>();
 
         protected override async Task OnInitializedAsync()
         {
@@ -23,7 +21,7 @@ namespace BlazorApp1.Components.Pages
         }
         protected async Task FetchData()
         {
-            assets = await ApiService.GetAssets();
+            relations = await ApiService.GetRelations();
         }
         protected async Task DeleteAsset(Asset asset )
         {
@@ -51,7 +49,7 @@ namespace BlazorApp1.Components.Pages
                 response = $"Error: {ex.Message}";
             }
         }
-        protected async Task EditAsset(Asset asset)
+        protected async Task EditAsset()
         {
             IsEditing = true;
         }

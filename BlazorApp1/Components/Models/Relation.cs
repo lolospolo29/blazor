@@ -18,6 +18,10 @@ public class Relation
 
     [JsonPropertyName("id")]
     public int? Id { get; set; }
+    public override string ToString()
+    {
+        return $"Asset: {Asset}, Broker: {Broker}, Strategy: {Strategy}, MaxTrades: {MaxTrades}, Id: {Id}";
+    }
     public string ToJson()
     {
         var jsonObject = new { AssetBrokerStrategyRelation = this };

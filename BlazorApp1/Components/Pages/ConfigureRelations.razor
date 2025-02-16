@@ -1,0 +1,54 @@
+@page "/configure-relations"
+@rendermode InteractiveServer
+
+<h3>Configure Asset</h3>
+
+<div>
+    <button @onclick="FetchData">Fetch Assets</button>
+</div>
+
+
+<div>
+    @if(relations != null)
+    {
+        <table class="table">
+            <thead>
+                <tr>
+                    <th>Name</th>
+                    <th>Asset Class</th>
+                    <th>Configure</th>
+                    <th>Delete</th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach(var asset in relations)
+                {
+                    <tr>
+                        <td>
+                            @if (IsEditing)
+                            {
+                                <input @bind="asset.Name" />
+                            }
+                            else
+                            {
+                                @asset.Name
+                            }
+                        </td>
+                        <td>@asset.AssetClass</td>
+                        <td>
+                            @if (IsEditing)
+                            {
+                                <button @onclick="() => UpdateAsset(asset)">Save</button>
+                            }
+                            else
+                            {
+                                <button @onclick="() => EditAsset()">Edit</button>
+                            }
+                        </td>
+                        <button @onclick="() => DeleteAsset(asset)">DELETE</button>
+                    </tr>
+                }
+            </tbody>
+        </table>
+    }
+</div>

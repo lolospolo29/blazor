@@ -1,16 +1,13 @@
-using System;
-using System.Collections.Generic;
-
 using System.Text.Json;
 using System.Text.Json.Serialization;
 
-public class ExpectedTimeFrame
+public class Broker
 {
-    [JsonPropertyName("timeframe")]
-    public int? Timeframe { get; set; }
+    [JsonPropertyName("brokerId")]
+    public int? BrokerId { get; set; }
 
-    [JsonPropertyName("max_Len")]
-    public int? MaxLen { get; set; }
+    [JsonPropertyName("name")]
+    public string? Name { get; set; }
 
     public string ToJson()
     {

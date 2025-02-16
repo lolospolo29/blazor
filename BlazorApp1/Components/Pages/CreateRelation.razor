@@ -1,0 +1,41 @@
+@page "/create-relation"
+@rendermode InteractiveServer
+
+<h3>Create Relation</h3>
+
+
+<form @onsubmit="SubmitAsync">
+    <div>
+        <label>
+            Max Trades: 
+            <InputNumber @bind-Value="model!.MaxTrades" />
+        </label>
+    </div>
+    <div>
+        <InputSelect @bind-Value="model.Asset">
+            @foreach (var asset in assets)
+            {
+                <option value="@asset.Name">@asset.Name</option>
+            }
+        </InputSelect>
+    </div>
+    <div>
+        <InputSelect @bind-Value="model.Broker">
+            @foreach (var broker in brokers)
+            {
+                <option value="@broker.Name">@broker.Name</option>
+            }
+        </InputSelect>
+    </div>
+    <div>
+        <InputSelect @bind-Value="model.Strategy">
+            @foreach (var strategy in strategies)
+            {
+                <option value="@strategy.Name">@strategy.Name</option>
+            }
+        </InputSelect>
+    </div>
+    <div>
+        <button type="submit">Submit</button>
+    </div>
+</form>

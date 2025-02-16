@@ -4,7 +4,7 @@ using System.Text.Json.Serialization;
 public class Asset
 {
     [JsonPropertyName("asset_id")]
-    public string? AssetId { get; set; } 
+    public int? AssetId { get; set; } 
 
     [JsonPropertyName("name")]
     public string? Name { get; set; } 
