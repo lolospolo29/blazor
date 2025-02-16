@@ -9,49 +9,36 @@ namespace BlazorApp1.Components.Pages
     {
         [Inject] private TradingAPIService ApiService { get; set; } = default!;
 
-        public enum AssetClass
+        string? response = string.Empty;
+
+        public List<SMTPair> smtPair = new List<SMTPair>();
+
+        protected override async Task OnInitializedAsync()
         {
-            FX = 1,
-            Crypto = 2,
-            Indice = 3,
+            await FetchData();
         }
-
-        public enum Correlation
-        {
-            Positive = 1,
-            Negative = 2,
-        }
-
-        public Asset model = new Asset();
-
-        public List<Strategy> strategies = new();
-
-        public List<SMTPair> smtPairs = new();
-
-        public List<Asset> assets = new();
-
-        public SMTPair currentPair = new("","","","");
-
-        protected async Task SubmitAsync()
-        {
-            Console.WriteLine(model.ToJson() + smtPairs.Count);
-        }
-
-        protected async Task AddSMTAsync()
-        {
-            currentPair.AssetA = model.Name;
-            smtPairs.Add(currentPair);
-        }
-
         protected async Task FetchData()
         {
-            try{
-                strategies = await ApiService.GetStrategies();
-                assets = await ApiService.GetAssets();
+            try
+            {
+                smtPair = await ApiService.GetSMTPairs();
             }
             catch (Exception ex)
             {
-                Console.WriteLine(ex.Message);
+                response = $"Error: {ex.Message}";
+            }
+        }
+        protected async Task DeleteAsset(SMTPair pair )
+        {
+            try
+            {
+                await ApiService.DeleteSMTPair(pair);
+                Thread.Sleep(5000);
+                await FetchData();
+            }
+            catch (Exception ex)
+            {
+                response = $"Error: {ex.Message}";
             }
         }
     }

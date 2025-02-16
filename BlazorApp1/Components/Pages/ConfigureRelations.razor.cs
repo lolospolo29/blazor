@@ -21,13 +21,21 @@ namespace BlazorApp1.Components.Pages
         }
         protected async Task FetchData()
         {
-            relations = await ApiService.GetRelations();
+            try
+            {
+                relations = await ApiService.GetRelations();
+            }
+            catch (Exception ex)
+            {
+                response = $"Error: {ex.Message}";
+            }
         }
-        protected async Task DeleteAsset(Asset asset )
+
+        protected async Task DeleteRelation(Relation relation)
         {
             try
             {
-                await ApiService.DeleteAsset(asset);
+                await ApiService.DeleteRelation(relation);
                 Thread.Sleep(5000);
                 await FetchData();
             }
@@ -36,11 +44,11 @@ namespace BlazorApp1.Components.Pages
                 response = $"Error: {ex.Message}";
             }
         }
-        protected async Task UpdateAsset(Asset asset )
+        protected async Task UpdateRelation(Relation relation )
         {
             try
             {
-                await ApiService.UpdateAsset(asset);
+                await ApiService.UpdateRelation(relation);
                 Thread.Sleep(5000);
                 await FetchData();
             }
@@ -49,10 +57,9 @@ namespace BlazorApp1.Components.Pages
                 response = $"Error: {ex.Message}";
             }
         }
-        protected async Task EditAsset()
+        protected async Task EditRelation()
         {
             IsEditing = true;
         }
-
     }
 }

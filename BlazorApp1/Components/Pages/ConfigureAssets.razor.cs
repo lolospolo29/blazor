@@ -23,7 +23,14 @@ namespace BlazorApp1.Components.Pages
         }
         protected async Task FetchData()
         {
-            assets = await ApiService.GetAssets();
+            try
+            {
+                assets = await ApiService.GetAssets();
+            }
+            catch (Exception ex)
+            {
+                response = $"Error: {ex.Message}";
+            }
         }
         protected async Task DeleteAsset(Asset asset )
         {

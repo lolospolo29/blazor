@@ -12,6 +12,41 @@ public class TradingAPIService
     {
         _httpClient = httpClient;
     }
+    public async Task CreateSMTPair(SMTPair relation)
+    {
+        try
+        {
+            // Send POST request to Flask API with JSON data
+            var jsonString = JsonSerializer.Serialize(relation);
+            var content = new StringContent(jsonString, Encoding.UTF8, "application/json");
+            await _httpClient.PostAsync("create-smt-pair", content);
+        }
+        catch (Exception ex)
+        {
+            var responseMessage = $"Error: {ex.Message}";
+        }
+    }
+    public async Task<List<SMTPair>> GetSMTPairs()
+    {
+        var message = await _httpClient.GetStringAsync("get-smt-pairs");
+        List<SMTPair>? sMTPairs = JsonSerializer.Deserialize<List<SMTPair>>(message);
+        return sMTPairs ?? [];
+    }
+
+    public async Task DeleteSMTPair(SMTPair sMTPair)
+    {
+        try
+        {
+            // Send POST request to Flask API with JSON data
+            var jsonString = JsonSerializer.Serialize(sMTPair);
+            var content = new StringContent(jsonString, Encoding.UTF8, "application/json");
+            await _httpClient.PostAsync("delete-smt-pair", content);
+        }
+        catch (Exception ex)
+        {
+            var responseMessage = $"Error: {ex.Message}";
+        }
+    }
 
     public async Task CreateRelation(Relation relation)
     {
@@ -35,6 +70,35 @@ public class TradingAPIService
         return relations ?? [];
     }
 
+        public async Task UpdateRelation(Relation relation)
+    {
+        try
+        {
+            // Send POST request to Flask API with JSON data
+            var jsonString = JsonSerializer.Serialize(relation);
+            var content = new StringContent(jsonString, Encoding.UTF8, "application/json");
+            await _httpClient.PostAsync("update-relation", content);
+        }
+        catch (Exception ex)
+        {
+            var responseMessage = $"Error: {ex.Message}";
+        }
+    }
+    public async Task DeleteRelation(Relation relation)
+    {
+        try
+        {
+            // Send POST request to Flask API with JSON data
+            var jsonString = JsonSerializer.Serialize(relation);
+            var content = new StringContent(jsonString, Encoding.UTF8, "application/json");
+            await _httpClient.PostAsync("delete-relation", content);
+        }
+        catch (Exception ex)
+        {
+            var responseMessage = $"Error: {ex.Message}";
+        }
+    }
+
     public async Task<List<Broker>> GetBrokers()
     {
         var message = await _httpClient.GetStringAsync("get-brokers");
@@ -55,7 +119,6 @@ public class TradingAPIService
         List<Strategy>? strategies = JsonSerializer.Deserialize<List<Strategy>>(message);
         return strategies ?? [];
     }
-
 
     public async Task CreateAsset(Asset asset)
     {

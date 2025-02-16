@@ -1,40 +1,40 @@
 @page "/configure-smt"
 @rendermode InteractiveServer
 
-<form @onsubmit="AddSMTAsync">
-    <div>
-        <InputSelect @bind-Value="currentPair">
-            @foreach (var pair in smtPairs)
-            {
-                <option value="@pair">@pair.Strategy</option>
-            }
-        </InputSelect>
-    </div>
-    <div>
-        <InputSelect @bind-Value="currentPair.AssetB">
-            @foreach (var asset in assets)
-            {
-                <option value="@asset.Name">@asset.Name</option>
-            }
-        </InputSelect>
-    </div>
-    <div>
-        <InputSelect @bind-Value="currentPair.Correlation">
-            @foreach (var correlation in Enum.GetValues(typeof(Correlation)))
-            {
-                <option value="@correlation">@correlation</option>
-            }
-        </InputSelect>
-    </div>
-    <div>
-        <InputSelect @bind-Value="currentPair.Strategy">
-            @foreach (var strategy in strategies)
-            {
-                <option value="@strategy.Name">@strategy.Name</option>
-            }
-        </InputSelect>
-    </div>
-    <div>
-        <button type="submit">Add SMT</button>
-    </div>
-</form>
+
+<h3>Configure SMT Pairs</h3>
+
+<div>
+    <button @onclick="FetchData">Fetch SMT Pairs</button>
+</div>
+
+
+<div>
+    @if(smtPair != null)
+    {
+        <table class="table">
+            <thead>
+                <tr>
+                    <th>Corraltion</th>
+                    <th>Asset 1</th>
+                    <th>Asset 2</th>
+                    <th>Strategy</th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach(var pair in smtPair)
+                {
+                    <tr>
+                        <td>@pair.Correlation</td>
+                        <td>@pair.AssetA</td>
+                        <td>@pair.AssetB</td>
+                        <td>@pair.Strategy</td>
+                        <td>
+                            <button @onclick="() => DeleteAsset(pair)">DELETE</button>
+                        </td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+    }
+</div>

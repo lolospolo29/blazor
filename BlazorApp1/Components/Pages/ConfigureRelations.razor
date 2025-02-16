@@ -1,10 +1,10 @@
 @page "/configure-relations"
 @rendermode InteractiveServer
 
-<h3>Configure Asset</h3>
+<h3>Configure Relations</h3>
 
 <div>
-    <button @onclick="FetchData">Fetch Assets</button>
+    <button @onclick="FetchData">Fetch Relations</button>
 </div>
 
 
@@ -14,38 +14,42 @@
         <table class="table">
             <thead>
                 <tr>
-                    <th>Name</th>
-                    <th>Asset Class</th>
+                    <th>Max Trades</th>
+                    <th>Asset</th>
+                    <th>Broker</th>
+                    <th>Strategy</th>
                     <th>Configure</th>
                     <th>Delete</th>
                 </tr>
             </thead>
             <tbody>
-                @foreach(var asset in relations)
+                @foreach(var relation in relations)
                 {
                     <tr>
                         <td>
                             @if (IsEditing)
                             {
-                                <input @bind="asset.Name" />
+                                <input type="number" @bind="relation.MaxTrades" />
                             }
                             else
                             {
-                                @asset.Name
+                                @relation.MaxTrades
                             }
                         </td>
-                        <td>@asset.AssetClass</td>
+                        <td>@relation.Asset</td>
+                        <td>@relation.Broker</td>
+                        <td>@relation.Strategy</td>
                         <td>
                             @if (IsEditing)
                             {
-                                <button @onclick="() => UpdateAsset(asset)">Save</button>
+                                <button @onclick="() => UpdateRelation(relation)">Save</button>
                             }
                             else
                             {
-                                <button @onclick="() => EditAsset()">Edit</button>
+                                <button @onclick="() => EditRelation()">Edit</button>
                             }
                         </td>
-                        <button @onclick="() => DeleteAsset(asset)">DELETE</button>
+                        <button @onclick="() => DeleteRelation(relation)">DELETE</button>
                     </tr>
                 }
             </tbody>
