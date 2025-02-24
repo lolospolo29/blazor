@@ -5,8 +5,8 @@ using System.Text.Json.Serialization;
 
 public class Trade
 {
-    [JsonPropertyName("id")]
-    public string? Id { get; set; }
+    [JsonPropertyName("tradeId")]
+    public string? TradeId { get; set; }
 
     [JsonPropertyName("orders")]
     public List<Order>? Orders { get; set; }
@@ -60,7 +60,7 @@ public class Trade
         }
         catch (Exception e)
         {
-            Console.WriteLine($"Mapping Error with TradeId: {Id}, Error: {e}");
+            Console.WriteLine($"Mapping Error with TradeId: {TradeId}, Error: {e}");
             return string.Empty;
         }
     }

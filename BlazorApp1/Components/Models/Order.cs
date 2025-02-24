@@ -5,7 +5,7 @@ using System.Text.Json.Serialization;
 
 public class Order
 {
-    [JsonPropertyName("trade_id")]
+    [JsonPropertyName("tradeId")]
     public string? TradeId { get; set; }
     
     [JsonPropertyName("entry_frame_work")]
@@ -45,7 +45,7 @@ public class Order
     public string? OrderId { get; set; }
     
     [JsonPropertyName("isLeverage")]
-    public int? IsLeverage { get; set; }
+    public string? IsLeverage { get; set; }
     
     [JsonPropertyName("marketUnit")]
     public string? MarketUnit { get; set; }

@@ -1,0 +1,34 @@
+@page "/news"
+@rendermode InteractiveServer
+
+<PageTitle>News Days</PageTitle>
+
+<h3>News Events</h3>
+
+@foreach (var newsDay in news)
+{
+    <div class="news-day">
+        <h4>@newsDay.DayIso</h4>
+        <table class="table">
+            <thead>
+                <tr>
+                    <th>Time</th>
+                    <th>Title</th>
+                    <th>Currency</th>
+                    <th>Daytime</th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var newsEvent in newsDay.NewsEvents ?? new List<NewsEvent>())
+                {
+                    <tr>
+                        <td>@newsEvent.Time</td>
+                        <td>@newsEvent.Title</td>
+                        <td>@newsEvent.Currency</td>
+                        <td>@newsEvent.Daytime</td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+    </div>
+}

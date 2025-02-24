@@ -2,82 +2,110 @@
 
 <PageTitle>Trading Dashboard</PageTitle>
 
-<div class="trading-dashboard">
-    <header class="hero">
-        <h1>Trading Strategy Manager</h1>
-        <p>Configure, monitor, and optimize your trading strategies in real-time.</p>
-        <button class="cta">Create New Strategy</button>
-    </header>
-    
-    <section class="market-summary">
-        <h2>Market Overview</h2>
-        <div class="market-data">
-            <div class="stock">
-                <h3>NASDAQ</h3>
-                <p>14,789.32 <span class="up">+1.32%</span></p>
-            </div>
-            <div class="stock">
-                <h3>S&P 500</h3>
-                <p>4,517.68 <span class="down">-0.45%</span></p>
-            </div>
-            <div class="stock">
-                <h3>Bitcoin</h3>
-                <p>$45,678 <span class="up">+2.1%</span></p>
-            </div>
-        </div>
-    </section>
-    
-    <section class="strategy-management">
-        <h2>Strategy Configuration</h2>
-        <p>Define and tweak your trading algorithms.</p>
-        <button class="cta">Manage Strategies</button>
-    </section>
-    
-    <section class="analytics">
-        <h2>Performance Analytics</h2>
-        <p>Track the effectiveness of your strategies with real-time data.</p>
-    </section>
+<h3>Trading Dashboard</h3>
+
+
+<div>
+    @if(trades != null)
+    {
+        <table class="table">
+            <thead>
+                <tr>
+                    <th>Category</th>
+                    <th>Leverage</th>
+                    <th>Asset</th>
+                    <th>Broker</th>
+                    <th>Strategy</th>
+                    <th>Side</th>
+                    <th>Size</th>
+                    <th>Pnl</th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach(var trade in trades)
+                {
+                    <tr>
+                        <td>@trade.Category</td>
+                        <td>@trade.Leverage</td>
+                        @if(trade.Relation != null)
+                        {
+                            <td>@trade.Relation.Asset</td>
+                            <td>@trade.Relation.Broker</td>
+                            <td>@trade.Relation.Strategy</td>
+                        }
+                        else
+                        {
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                        }
+                        <td>@trade.Side</td>
+                        <td>@trade.Size</td>
+                        <td>@trade.UnrealisedPnl</td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+    }
 </div>
 
-<style>
-.trading-dashboard {
-    font-family: Arial, sans-serif;
-    text-align: center;
-    padding: 20px;
-    background-color: #121212;
-    color: #d7d7d7;
-}
-.hero {
-    background: #1e1e1e;
-    color: white;
-    padding: 50px;
-    border-radius: 10px;
-}
-.cta {
-    background: #ff9800;
-    color: white;
-    border: none;
-    padding: 10px 20px;
-    font-size: 18px;
-    cursor: pointer;
-    margin-top: 10px;
-    border-radius: 5px;
-}
-.market-summary, .strategy-management, .analytics {
-    margin-top: 30px;
-}
-.market-data {
-    display: flex;
-    justify-content: center;
-    gap: 20px;
-}
-.stock {
-    background: #1e1e1e;
-    padding: 15px;
-    border-radius: 8px;
-    border: 1px solid #444;
-    color: #d7d7d7;
-}
-.up { color: #00ff00; }
-.down { color: #ff4c4c; }
-</style>
+<div>
+    @if(trades != null)
+    {
+        <table class="table">
+            <thead>
+                <tr>
+                    <th>Category</th>
+                    <th>Created Time</th>
+                    <th>Leaves Qty</th>
+                    <th>Leaves Value</th>
+                    <th>Money at Risk</th>
+                    <th>Order Status</th>
+                    <th>Order Type</th>
+                    <th>Price</th>
+                    <th>Qty</th>
+                    <th>Risk Percentage</th>
+                    <th>Side</th>
+                    <th>Stop Limit Price</th>
+                    <th>Stop Loss</th>
+                    <th>Symbol</th>
+                    <th>Take Profit</th>
+                    <th>Take Profit Limit Price</th>
+                    <th>Trigger Direction</th>
+                     <th>Trigger Price</th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach(var trade in trades)
+                {
+                    @if(trade.Orders != null)
+                    {
+                        @foreach(var order in trade.Orders)
+                        {
+                            <tr>
+                                <td>@order.Category</td>
+                                <td>@order.CreatedTime</td>
+                                <td>@order.LeavesQty</td>
+                                <td>@order.LeavesValue</td>
+                                <td>@order.MoneyAtRisk</td>
+                                <td>@order.OrderStatus</td>
+                                <td>@order.OrderType</td>
+                                <td>@order.Price</td>
+                                <td>@order.Qty</td>
+                                <td>@order.RiskPercentage</td>
+                                <td>@order.Side</td>
+                                <td>@order.SlLimitPrice</td>
+                                <td>@order.StopLoss</td>
+                                <td>@order.Symbol</td>
+                                <td>@order.TakeProfit</td>
+                                <td>@order.TpLimitPrice</td>
+                                <td>@order.TriggerDirection</td>
+                                <td>@order.TriggerPrice</td>
+                            </tr>
+                        }
+                    }
+                }
+            </tbody>
+        </table>
+    }
+</div>
