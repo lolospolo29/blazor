@@ -9,13 +9,16 @@ public class Result
     [JsonPropertyName("strategy")]
     public string? Strategy { get; set; }
 
+    [JsonPropertyName("asset")]
+    public string? Asset { get; set; }
+
     [JsonPropertyName("no_of_trades")]
     public int? NoOfTrades { get; set; }
 
     [JsonPropertyName("winrate")]
     public float? Winrate { get; set; }
 
-    [JsonPropertyName("riks_ratio")]
+    [JsonPropertyName("risk_ratio")]
     public float? RiskRatio { get; set; }
 
     [JsonPropertyName("win_count")]
@@ -38,9 +41,6 @@ public class Result
 
     [JsonPropertyName("average_duration")]
     public float? AverageDuration { get; set; }
-
-    [JsonPropertyName("highest_profit")]
-    public float? HighestProfit { get; set; }
 
     [JsonPropertyName("max_drawdown")]
     public float? MaxDrawdown { get; set; }

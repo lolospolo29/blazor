@@ -1,0 +1,73 @@
+@page "/run-backtest"
+@rendermode InteractiveServer
+
+<PageTitle>Create Backtest</PageTitle>
+
+<form @onsubmit="SubmitAsync">
+    <div>
+        <InputSelect @bind-Value="model.Strategy">
+            @foreach (var strategy in strategies)
+            {
+                <option value="@strategy">@strategy</option>
+            }
+        </InputSelect>
+    </div>
+    <div>
+        @foreach (var asset in assets)
+        {
+            <label>
+                <input type="checkbox" value="@asset" @onchange="(e) => ToggleSelection(asset, e)" />
+                @asset
+            </label>
+        }
+    </div>
+    <div>
+        <InputNumber @bind-Value="model.TradeLimit" />
+    </div>
+    <div>
+        <button type="submit">Submit</button>
+    </div>
+</form>
+<h1> </h1>
+    <div>
+        <InputSelect @bind-Value="model.Strategy">
+            @foreach (var strategy in strategies)
+            {
+                <option value="@strategy">@strategy</option>
+            }
+        </InputSelect>
+    </div>
+<button @onclick="OnButtonClick">Fetch Results</button>
+
+<div>
+    @if(results != null)
+    {
+        <table class="table">
+            <thead>
+                <tr>
+                    <th>Asset</th>
+                    <th>Strategy</th>
+                    <th>Winrate</th>
+                    <th>No of Trades</th>
+                    <th>Pnl %</th>
+                    <th>Max Drawdown</th>
+                    <th>Risk Ratio</th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach(var result in results)
+                {
+                    <tr>
+                        <td>@result.Asset</td>
+                        <td>@result.Strategy</td>
+                        <td>@result.Winrate</td>
+                        <td>@result.NoOfTrades</td>
+                        <td>@result.PnlPercentage</td>
+                        <td>@result.MaxDrawdown</td>
+                        <td>@result.RiskRatio</td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+    }
+</div>

@@ -13,12 +13,12 @@ public class TradingAPIService
         _httpClient = httpClient;
     }
 
-    public async Task RunBackest(string strategy)
+    public async Task RunBackest(BacktestInput input)
     {
         try
         {
             // Send POST request to Flask API with JSON data
-            var jsonString = JsonSerializer.Serialize(strategy);
+            var jsonString = JsonSerializer.Serialize(input);
             var content = new StringContent(jsonString, Encoding.UTF8, "application/json");
             await _httpClient.PostAsync("run-backtest", content);
         }
@@ -27,12 +27,12 @@ public class TradingAPIService
             var responseMessage = $"Error: {ex.Message}";
         }
     }
-    public async Task<List<Result>> GetTestResults(BacktestInput input)
+    public async Task<List<Result>> GetTestResults(string strategy)
     {
         try
         {
             // Send POST request to Flask API with JSON data
-            var jsonString = JsonSerializer.Serialize(input);
+            var jsonString = JsonSerializer.Serialize(strategy);
             var content = new StringContent(jsonString, Encoding.UTF8, "application/json");
             
             // Call the Flask API
@@ -158,6 +158,19 @@ public class TradingAPIService
             var responseMessage = $"Error: {ex.Message}";
         }
     }
+    public async Task<List<AssetClass>> GetAssetClasses()
+    {
+        var message = await _httpClient.GetStringAsync("get-asset-classes");
+        List<AssetClass>? assetClasses = JsonSerializer.Deserialize<List<AssetClass>>(message);
+        return assetClasses ?? [];
+    }
+
+    public async Task<List<Category>> GetCategories()
+    {
+        var message = await _httpClient.GetStringAsync("get-categories");
+        List<Category>? categories = JsonSerializer.Deserialize<List<Category>>(message);
+        return categories ?? [];
+    }
 
     public async Task<List<Broker>> GetBrokers()
     {
@@ -173,10 +186,10 @@ public class TradingAPIService
         return trades ?? [];
     }
 
-    public async Task<List<Strategy>> GetStrategies()
+    public async Task<List<string>> GetStrategies()
     {
         var message = await _httpClient.GetStringAsync("get-strategies");
-        List<Strategy>? strategies = JsonSerializer.Deserialize<List<Strategy>>(message);
+        List<string>? strategies = JsonSerializer.Deserialize<List<string>>(message);
         return strategies ?? [];
     }
 

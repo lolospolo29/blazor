@@ -1,10 +1,13 @@
 using Microsoft.AspNetCore.Components;
+
 using Microsoft.AspNetCore.Components.Forms;
+using Microsoft.JSInterop;
 
 namespace BlazorApp1.Components.Pages
 {
     public partial class Home : ComponentBase
     {
+        
         [Inject] private TradingAPIService ApiService { get; set; } = default!;
 
         string? response = string.Empty;

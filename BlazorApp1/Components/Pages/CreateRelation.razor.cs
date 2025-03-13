@@ -8,25 +8,21 @@ namespace BlazorApp1.Components.Pages
     public partial class CreateRelation : ComponentBase
     {
         [Inject] private TradingAPIService ApiService { get; set; } = default!;
-
-        public enum AssetClass
-        {
-            FX = 1,
-            Crypto = 2,
-            Indice = 3,
-        }
-
         string? response = string.Empty;
 
-        public List<Strategy> strategies = new List<Strategy>();
+        public List<string> strategies = new List<string>();
 
         public List<Asset> assets = new List<Asset>();
 
         public List<Broker> brokers = new List<Broker>();
 
+        public List<Category> categories = new List<Category>();
+
         public Relation model = new Relation();
         protected async Task SubmitAsync()
         {
+            model.Id = BitConverter.ToInt32(Guid.NewGuid().ToByteArray(), 0);
+
             await ApiService.CreateRelation(model);
         }
 
@@ -40,6 +36,7 @@ namespace BlazorApp1.Components.Pages
                 strategies = await ApiService.GetStrategies();
                 assets = await ApiService.GetAssets();
                 brokers = await ApiService.GetBrokers();
+                categories = await ApiService.GetCategories();
             }
             catch (Exception ex)
             {
@@ -47,4 +44,5 @@ namespace BlazorApp1.Components.Pages
             }
         }
     }
+
 }

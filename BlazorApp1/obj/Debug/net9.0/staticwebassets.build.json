@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "DHc0OgGF6dBqZfBj/vGCQaFTGE3g7LV1tbTXT1gBN0o=",
+  "Hash": "cRSoqLAAxyiwEmnP9YJg8SOmIV5XlfCu7sFRloFQC6w=",
   "Source": "BlazorApp1",
   "BasePath": "_content/BlazorApp1",
   "Mode": "Default",
@@ -2094,6 +2094,27 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot/lib/bootstrap/dist/js/bootstrap.min.js.map"
+    },
+    {
+      "Identity": "/Users/lauris/Desktop/blazor/BlazorApp1/wwwroot/youtube-video-gif.gif",
+      "SourceId": "BlazorApp1",
+      "SourceType": "Discovered",
+      "ContentRoot": "/Users/lauris/Desktop/blazor/BlazorApp1/wwwroot/",
+      "BasePath": "_content/BlazorApp1",
+      "RelativePath": "youtube-video-gif#[.{fingerprint}]?.gif",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "Fingerprint": "5ehf6vo3p1",
+      "Integrity": "MxggwZNga6Paib2j2cr+xybO/1Y6exemGZ07LZxmSnk=",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot/youtube-video-gif.gif"
     }
   ],
   "Endpoints": [
@@ -16546,6 +16567,88 @@
         {
           "Name": "integrity",
           "Value": "sha256-kVm75Syt0B86ikuL4igEkX315p71WyMLSh+YvGyq2ZY="
+        }
+      ]
+    },
+    {
+      "Route": "youtube-video-gif.5ehf6vo3p1.gif",
+      "AssetFile": "/Users/lauris/Desktop/blazor/BlazorApp1/wwwroot/youtube-video-gif.gif",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "18540192"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "image/gif"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"MxggwZNga6Paib2j2cr+xybO/1Y6exemGZ07LZxmSnk=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Tue, 04 Mar 2025 07:22:43 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "5ehf6vo3p1"
+        },
+        {
+          "Name": "label",
+          "Value": "youtube-video-gif.gif"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-MxggwZNga6Paib2j2cr+xybO/1Y6exemGZ07LZxmSnk="
+        }
+      ]
+    },
+    {
+      "Route": "youtube-video-gif.gif",
+      "AssetFile": "/Users/lauris/Desktop/blazor/BlazorApp1/wwwroot/youtube-video-gif.gif",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "18540192"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "image/gif"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"MxggwZNga6Paib2j2cr+xybO/1Y6exemGZ07LZxmSnk=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Tue, 04 Mar 2025 07:22:43 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=3600, must-revalidate"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-MxggwZNga6Paib2j2cr+xybO/1Y6exemGZ07LZxmSnk="
         }
       ]
     }

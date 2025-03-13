@@ -22,7 +22,7 @@ namespace BlazorApp1.Components.Pages
             Negative = 2,
         }
 
-        public List<Strategy> strategies = new();
+        public List<string> strategies = new();
 
         public List<Asset> assets = new();
 

@@ -13,9 +13,9 @@
     </div>
     <div>
         <InputSelect @bind-Value="model.AssetClass">
-            @foreach (var assetclass in Enum.GetValues(typeof(AssetClass)))
+            @foreach (var assetClass in assetClasses)
             {
-                <option value="@assetclass">@assetclass</option>
+                <option value="@assetClass.Name">@assetClass.Name</option>
             }
         </InputSelect>
     </div>

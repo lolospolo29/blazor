@@ -12,7 +12,8 @@ builder.Services.AddRazorComponents()
 
 
 builder.Services.AddScoped<HttpClient>(sp =>
-new HttpClient { BaseAddress = new Uri("http://localhost:5000/") });
+//new HttpClient { BaseAddress = new Uri("https://automatedtrading-production.up.railway.app") });
+new HttpClient { BaseAddress = new Uri("http://localhost:80") });
 builder.Services.AddScoped<TradingAPIService>();
 
 var app = builder.Build();

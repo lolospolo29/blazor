@@ -43,6 +43,10 @@ build_metadata.AdditionalFiles.CssScope =
 build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50cy9QYWdlcy9DcmVhdGVBc3NldC5yYXpvcg==
 build_metadata.AdditionalFiles.CssScope = 
 
+[/Users/lauris/Desktop/blazor/BlazorApp1/Components/Pages/CreateBacktest.razor]
+build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50cy9QYWdlcy9DcmVhdGVCYWNrdGVzdC5yYXpvcg==
+build_metadata.AdditionalFiles.CssScope = 
+
 [/Users/lauris/Desktop/blazor/BlazorApp1/Components/Pages/CreateRelation.razor]
 build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50cy9QYWdlcy9DcmVhdGVSZWxhdGlvbi5yYXpvcg==
 build_metadata.AdditionalFiles.CssScope = 

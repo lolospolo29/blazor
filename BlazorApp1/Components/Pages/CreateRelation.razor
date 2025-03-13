@@ -31,7 +31,15 @@
         <InputSelect @bind-Value="model.Strategy">
             @foreach (var strategy in strategies)
             {
-                <option value="@strategy.Name">@strategy.Name</option>
+                <option value="@strategy">@strategy</option>
+            }
+        </InputSelect>
+    </div>
+    <div>
+        <InputSelect @bind-Value="model.Category">
+            @foreach (var category in categories)
+            {
+                <option value="@category.Name">@category.Name</option>
             }
         </InputSelect>
     </div>

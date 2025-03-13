@@ -16,11 +16,14 @@ public class Relation
     [JsonPropertyName("max_trades")]
     public int? MaxTrades { get; set; }
 
+    [JsonPropertyName("category")]
+    public int? Category { get; set; }
+
     [JsonPropertyName("id")]
     public int? Id { get; set; }
     public override string ToString()
     {
-        return $"Asset: {Asset}, Broker: {Broker}, Strategy: {Strategy}, MaxTrades: {MaxTrades}, Id: {Id}";
+        return $"Asset: {Asset}, Broker: {Broker}, Strategy: {Strategy}, MaxTrades: {MaxTrades}, Id: {Id}, Category: {Category}";
     }
     public string ToJson()
     {

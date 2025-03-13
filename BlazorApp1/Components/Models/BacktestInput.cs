@@ -4,10 +4,13 @@ using System.Text.Json.Serialization;
 public class BacktestInput
 {
     [JsonPropertyName("strategy")]
-    public string? Strategy { get; set; }
+    public string? Strategy { get; set; } = string.Empty;
 
     [JsonPropertyName("test_assets")]
-    public List<string>? TestAssets { get; set; }
+    public List<string>? TestAssets { get; set; } = new List<string>();
+
+    [JsonPropertyName("trade_limit")]
+    public int? TradeLimit { get; set; } = 2;
 
     public string ToJson()
     {

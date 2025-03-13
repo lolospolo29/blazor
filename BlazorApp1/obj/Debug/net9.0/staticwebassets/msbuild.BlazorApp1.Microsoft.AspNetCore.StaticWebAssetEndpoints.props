@@ -564,5 +564,17 @@
       <EndpointProperties><![CDATA[[{"Name":"fingerprint","Value":"notf2xhcfb"},{"Name":"integrity","Value":"sha256-\u002BUW802wgVfnjaSbdwyHLlU7AVplb0WToOlvN1CnzIac="},{"Name":"label","Value":"_content/BlazorApp1/lib/bootstrap/dist/js/bootstrap.js"}]]]></EndpointProperties>
       <ResponseHeaders><![CDATA[[{"Name":"Accept-Ranges","Value":"bytes"},{"Name":"Cache-Control","Value":"max-age=31536000, immutable"},{"Name":"Content-Length","Value":"145401"},{"Name":"Content-Type","Value":"text/javascript"},{"Name":"ETag","Value":"\u0022\u002BUW802wgVfnjaSbdwyHLlU7AVplb0WToOlvN1CnzIac=\u0022"},{"Name":"Last-Modified","Value":"Sun, 02 Feb 2025 18:24:06 GMT"}]]]></ResponseHeaders>
     </StaticWebAssetEndpoint>
+    <StaticWebAssetEndpoint Include="_content/BlazorApp1/youtube-video-gif.5ehf6vo3p1.gif">
+      <AssetFile>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\youtube-video-gif.gif'))</AssetFile>
+      <Selectors><![CDATA[[]]]></Selectors>
+      <EndpointProperties><![CDATA[[{"Name":"fingerprint","Value":"5ehf6vo3p1"},{"Name":"integrity","Value":"sha256-MxggwZNga6Paib2j2cr\u002BxybO/1Y6exemGZ07LZxmSnk="},{"Name":"label","Value":"_content/BlazorApp1/youtube-video-gif.gif"}]]]></EndpointProperties>
+      <ResponseHeaders><![CDATA[[{"Name":"Accept-Ranges","Value":"bytes"},{"Name":"Cache-Control","Value":"max-age=31536000, immutable"},{"Name":"Content-Length","Value":"18540192"},{"Name":"Content-Type","Value":"image/gif"},{"Name":"ETag","Value":"\u0022MxggwZNga6Paib2j2cr\u002BxybO/1Y6exemGZ07LZxmSnk=\u0022"},{"Name":"Last-Modified","Value":"Tue, 04 Mar 2025 07:22:43 GMT"}]]]></ResponseHeaders>
+    </StaticWebAssetEndpoint>
+    <StaticWebAssetEndpoint Include="_content/BlazorApp1/youtube-video-gif.gif">
+      <AssetFile>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\youtube-video-gif.gif'))</AssetFile>
+      <Selectors><![CDATA[[]]]></Selectors>
+      <EndpointProperties><![CDATA[[{"Name":"integrity","Value":"sha256-MxggwZNga6Paib2j2cr\u002BxybO/1Y6exemGZ07LZxmSnk="}]]]></EndpointProperties>
+      <ResponseHeaders><![CDATA[[{"Name":"Accept-Ranges","Value":"bytes"},{"Name":"Cache-Control","Value":"max-age=3600, must-revalidate"},{"Name":"Content-Length","Value":"18540192"},{"Name":"Content-Type","Value":"image/gif"},{"Name":"ETag","Value":"\u0022MxggwZNga6Paib2j2cr\u002BxybO/1Y6exemGZ07LZxmSnk=\u0022"},{"Name":"Last-Modified","Value":"Tue, 04 Mar 2025 07:22:43 GMT"}]]]></ResponseHeaders>
+    </StaticWebAssetEndpoint>
   </ItemGroup>
 </Project>
